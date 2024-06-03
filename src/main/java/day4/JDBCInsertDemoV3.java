@@ -6,12 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class JDBCInsertEmp {
-
+public class JDBCInsertDemoV3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String URL = "jdbc:sqlite:C:\\Users\\dev\\IdeaProjects\\SDAIA-Course-HW\\src\\main\\java\\HW\\day4\\hr.db";
-        String query = "insert into employee values (?, ?, ?, ?, ?, ?, ?)";
+        String URL = "jdbc:sqlite:C:\\Users\\dev\\Desktop\\JavaBasics-master\\src\\main\\java\\day4\\hr.db";
+        String query = "insert into jobs values (?, ?, ?, ?)";
 
 
         try (Connection conn = DriverManager.getConnection(URL)) {
@@ -21,35 +20,22 @@ public class JDBCInsertEmp {
             while (true) {
 
 
-                System.out.println("Enter employee ID: ");
-                int employeeID = sc.nextInt();
-                st.setInt(1, employeeID);
+                System.out.println("Enter job ID: ");
+                int jobID = sc.nextInt();
+                st.setInt(1, jobID);
                 sc.nextLine();
 
-                System.out.println("Enter First name: ");
-                String firstName = sc.nextLine();
-                st.setString(2, firstName);
+                System.out.println("Enter job Title: ");
+                String jobnTitle = sc.nextLine();
+                st.setString(2, jobnTitle);
 
-                System.out.println("Enter Last name: ");
-                String lastName = sc.nextLine();
-                st.setString(3, lastName);
+                System.out.println("Enter min Salary: ");
+                int minSalary = sc.nextInt();
+                st.setInt(3, minSalary);
 
-                System.out.println("Enter Email: ");
-                String email = sc.nextLine();
-                st.setString(4, email);
-
-                System.out.println("Enter Phone number: ");
-                String phoneNumber = sc.nextLine();
-                st.setString(5, phoneNumber);
-
-                System.out.println("Enter Hire date: ");
-                String hireDate = sc.nextLine();
-                st.setString(6, hireDate);
-
-
-                System.out.println("Enter Salary: ");
-                int salary = sc.nextInt();
-                st.setInt(7, salary);
+                System.out.println("Enter mxn Salary: ");
+                int mxnSalary = sc.nextInt();
+                st.setInt(4, mxnSalary);
 
                 st.addBatch();
 

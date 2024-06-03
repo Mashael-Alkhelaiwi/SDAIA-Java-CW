@@ -7,7 +7,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class ConnPoolConfig {
-    private static String url = "jdbc:sqlite:C:\\Users\\dev\\IdeaProjects\\SDAIA-Course-HW\\src\\main\\java\\HW\\day4\\hr.db";
+
+    private static String url = "jdbc:sqlite:C:\\Users\\dev\\Desktop\\JavaBasics-master\\src\\main\\java\\day4\\hr.db";
     private static HikariConfig config = new HikariConfig();
     private static HikariDataSource ds;
 
@@ -20,5 +21,6 @@ public class ConnPoolConfig {
     public static Connection getConnection() throws SQLException {
         return ds.getConnection();
     }
+
 
 }
